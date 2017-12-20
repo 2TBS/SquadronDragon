@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine;	
 
 public class PL_Shooting : MonoBehaviour {
 
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
+	int angle;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +28,7 @@ public class PL_Shooting : MonoBehaviour {
 			bulletPrefab,
 			transform.position,
 			transform.rotation);
-
-		//bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * 6;
-		bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 1000);
+		bullet.GetComponent<Rigidbody2D>().AddForce(transform.rotation * Vector2.up * 1000);
 		Destroy(bullet, 2.0f);     
 	}
 }
