@@ -7,10 +7,11 @@ public class PL_Shooting : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
 	int angle;
+	Vector3 pos;
 
 	// Use this for initialization
 	void Start () {
-		
+		pos = new Vector3(0f, 2.1f, 0f);
 	}
 	
 	// Update is called once per frame
@@ -26,7 +27,7 @@ public class PL_Shooting : MonoBehaviour {
 	void Fire() {
 		var bullet = (GameObject)Instantiate(
 			bulletPrefab,
-			transform.position,
+			transform.position + pos,
 			transform.rotation);
 		bullet.GetComponent<Rigidbody2D>().AddForce(transform.rotation * Vector2.up * 1000);
 		Destroy(bullet, 2.0f);     
