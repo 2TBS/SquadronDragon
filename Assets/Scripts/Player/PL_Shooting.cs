@@ -30,7 +30,7 @@ public class PL_Shooting : MonoBehaviour {
 		else if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
 			Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString());
 
-			
+		}
 		if (ammo == 0) {
 			ammo = 5;
 		}
