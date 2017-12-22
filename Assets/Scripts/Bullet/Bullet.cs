@@ -13,4 +13,16 @@ public class Bullet : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		Debug.Log (col.gameObject.ToString ());
+		if(col.gameObject.name == "EnemyShip(Clone)")
+		{
+			Debug.Log ("Hit Enemy");
+			Debug.Log (col.gameObject.ToString ());
+			Destroy (col.gameObject);
+			Destroy (this.gameObject);
+		}
+	}
 }
