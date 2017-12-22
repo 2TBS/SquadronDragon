@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour {
 	{
 		Debug.Log (col.gameObject.ToString ());
 		durability--;
-		if(col.gameObject.name == "EnemyShip(Clone)")
+		if(col.gameObject.tag.Equals("Enemy"))
 		{
 			Debug.Log ("Hit Enemy");
 			Debug.Log (col.gameObject.ToString ());

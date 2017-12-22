@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 ///Defines Player Health 
 ///Attach directly to the player object.
@@ -19,7 +20,7 @@ public class PL_Health : MonoBehaviour {
 		if (hullHealth <=0) {
 			Debug.Log ("Player Ship Destroyed");
 			Destroy (this.gameObject);
-			Application.LoadLevel("GameOver");
+			SceneManager.LoadScene("GameOver");
 		}
 	}
 }
