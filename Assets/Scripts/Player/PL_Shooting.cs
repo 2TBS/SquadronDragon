@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PL_Shooting : MonoBehaviour {
 
+	public const int DELAY = 1;
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
 	int angle;
 	Vector3 pos;
+	double fireTimer = 0.0;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +18,13 @@ public class PL_Shooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (Input.GetButtonDown("Fire1"))
-		{
-			Fire();
+		fireTimer += Time.deltaTime;
+		if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
+			Fire ();
+			fireTimer = 0.0;
+		} 
+		else if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
+			Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString());
 		}
 		
 	}

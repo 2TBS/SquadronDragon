@@ -9,6 +9,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
 	public const int DAMAGE = 1;
+	public int durability = 3;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,13 +23,14 @@ public class Bullet : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		Debug.Log (col.gameObject.ToString ());
+		durability--;
 		if(col.gameObject.name == "EnemyShip(Clone)")
 		{
 			Debug.Log ("Hit Enemy");
 			Debug.Log (col.gameObject.ToString ());
 			col.gameObject.GetComponent<EN_Health> ().hullHealth -= DAMAGE;
 			Debug.Log ("Enemy Health Remaining: " + col.gameObject.GetComponent<EN_Health> ().hullHealth);
-			Destroy (this.gameObject);
+			//Destroy (this.gameObject);
 		}
 		if(col.gameObject.name == "PlayerShip")
 		{
@@ -36,6 +38,9 @@ public class Bullet : MonoBehaviour {
 			Debug.Log (col.gameObject.ToString ());
 			col.gameObject.GetComponent<PL_Health> ().hullHealth -= DAMAGE;
 			Debug.Log ("Player Health Remaining: " + col.gameObject.GetComponent<PL_Health> ().hullHealth);
+			//Destroy (this.gameObject);
+		}
+		if (durability <= 0) {
 			Destroy (this.gameObject);
 		}
 	}

@@ -29,6 +29,7 @@ public class EN_Shooting : MonoBehaviour {
             bulletPrefab,
 			transform.position + pos,
             transform.rotation);
+		bullet.AddComponent<Bullet> ();
         bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 1000);
         Destroy(bullet, 2.0f);
     }
