@@ -23,6 +23,11 @@ public class MM_Menu : MonoBehaviour {
         SceneManager.LoadScene(level-1);
         level--;
     }
+	public void ForwardScene()
+	{
+		SceneManager.LoadScene(level+1);
+		level++;
+	}
     public void GameOver()
     {
         level = 0;

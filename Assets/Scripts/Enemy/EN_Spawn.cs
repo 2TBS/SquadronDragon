@@ -20,7 +20,8 @@ public class EN_Spawn : MonoBehaviour {
 	}
 
 	IEnumerator Spawn() {
-		Instantiate(enemyPrefab, new Vector2(Random.Range(-Vars.MAX_WIDTH, Vars.MAX_WIDTH), Random.Range(0, Vars.MAX_HEIGHT)), Quaternion.identity);
+		var ship = Instantiate(enemyPrefab, new Vector2(Random.Range(-Vars.MAX_WIDTH, Vars.MAX_WIDTH), Random.Range(0, Vars.MAX_HEIGHT)), Quaternion.identity);
+		ship.AddComponent<EN_Health> ();
 		yield return new WaitForSeconds(SPAWN_RATE);
 		StartCoroutine(Spawn());
 	}
