@@ -5,8 +5,7 @@ using UnityEngine;
 public class PL_Shooting : MonoBehaviour {
 
 	public int ammo = 5;
-	//public const int DELAY = 1;
-	public const float DELAY = 0.3f;
+	public const int DELAY = 1;
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
 	int angle;
@@ -17,32 +16,20 @@ public class PL_Shooting : MonoBehaviour {
 	void Start () {
 		pos = new Vector3(0f, 2.1f, 0f);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		fireTimer += Time.deltaTime;
-
-		if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
+		if (ammo == 0) {ammo = 5;}
+		if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
 			Fire ();
 			GetComponent<AudioSource>().Play();
 			fireTimer = 0.0;
 		} 
-		else if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
+		else if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
 			Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString());
+		}
 
-		}
-		if (ammo == 0) {
-			ammo = 5;
-		}
-		if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
-			if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
-				Fire ();
-				fireTimer = 0.0;
-			} else if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
-				Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString ());
-			}
-		
-		}
 	}
 
 	void Fire() {
