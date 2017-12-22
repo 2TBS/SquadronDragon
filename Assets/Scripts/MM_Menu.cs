@@ -33,4 +33,8 @@ public class MM_Menu : MonoBehaviour {
         level = 0;
         SceneManager.LoadScene(level);
     }
+	public void ExitGame() 
+	{
+		Application.Quit();
+	}
 }
