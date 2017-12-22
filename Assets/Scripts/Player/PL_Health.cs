@@ -19,6 +19,7 @@ public class PL_Health : MonoBehaviour {
 		if (hullHealth <=0) {
 			Debug.Log ("Player Ship Destroyed");
 			Destroy (this.gameObject);
+			Application.LoadLevel("GameOver");
 		}
 	}
 }
