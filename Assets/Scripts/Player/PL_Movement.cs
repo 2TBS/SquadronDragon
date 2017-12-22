@@ -8,8 +8,8 @@ using UnityEngine;
 ///Since: 19 December 2017
 public class PL_Movement : MonoBehaviour {
 
-	public const float MOVE_SPEED = 0.1f;
-	public const float ROT_SPEED = 0.5f;
+	public const float MOVE_SPEED = 0.35f;
+	public const float ROT_SPEED = 3f;
 	public const float MAX_ROTATION = 30;
 
 	private float currAngle = 0;
