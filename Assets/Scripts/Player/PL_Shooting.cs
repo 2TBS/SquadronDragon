@@ -21,6 +21,7 @@ public class PL_Shooting : MonoBehaviour {
 		fireTimer += Time.deltaTime;
 		if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
 			Fire ();
+			GetComponent<AudioSource>().Play();
 			fireTimer = 0.0;
 		} 
 		else if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
