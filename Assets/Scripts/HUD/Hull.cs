@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.UI;
 
 public class Hull : MonoBehaviour {
-	public Sprite emptyPellet;
-	public Sprite fullPellet;
+	public Sprite emptyHealthPellet;
+	public Sprite fullHealthPellet;
 	GameObject health;
 	GameObject healthPellet1;
 	GameObject healthPellet2;
@@ -30,41 +31,41 @@ public class Hull : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (healthController.hullHealth / 2 > 4) {
-			healthPellet1.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet2.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet3.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet4.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet5.GetComponent<Image> ().sprite = fullPellet;
+			healthPellet1.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet2.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet3.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet4.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet5.GetComponent<Image> ().sprite = fullHealthPellet;
 		} else if (healthController.hullHealth / 2 > 3) {
-			healthPellet1.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet2.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet3.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet4.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet5.GetComponent<Image> ().sprite = emptyPellet;
+			healthPellet1.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet2.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet3.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet4.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet5.GetComponent<Image> ().sprite = emptyHealthPellet;
 		} else if (healthController.hullHealth / 2 > 2) {
-			healthPellet1.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet2.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet3.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet4.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet5.GetComponent<Image> ().sprite = emptyPellet;
+			healthPellet1.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet2.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet3.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet4.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet5.GetComponent<Image> ().sprite = emptyHealthPellet;
 		} else if (healthController.hullHealth / 2 > 1) {
-			healthPellet1.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet2.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet3.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet4.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet5.GetComponent<Image> ().sprite = emptyPellet;
+			healthPellet1.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet2.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet3.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet4.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet5.GetComponent<Image> ().sprite = emptyHealthPellet;
 		} else if (healthController.hullHealth / 2 > 0) {
-			healthPellet1.GetComponent<Image> ().sprite = fullPellet;
-			healthPellet2.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet3.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet4.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet5.GetComponent<Image> ().sprite = emptyPellet;
+			healthPellet1.GetComponent<Image> ().sprite = fullHealthPellet;
+			healthPellet2.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet3.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet4.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet5.GetComponent<Image> ().sprite = emptyHealthPellet;
 		} else {
-			healthPellet1.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet2.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet3.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet4.GetComponent<Image> ().sprite = emptyPellet;
-			healthPellet5.GetComponent<Image> ().sprite = emptyPellet;
+			healthPellet1.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet2.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet3.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet4.GetComponent<Image> ().sprite = emptyHealthPellet;
+			healthPellet5.GetComponent<Image> ().sprite = emptyHealthPellet;
 		}
 	}
 }

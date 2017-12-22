@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PL_Shooting : MonoBehaviour {
 
+	public int ammo = 5;
 	public const int DELAY = 1;
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
@@ -19,6 +20,7 @@ public class PL_Shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		fireTimer += Time.deltaTime;
+		if (ammo == 0) {ammo = 5;}
 		if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
 			Fire ();
 			fireTimer = 0.0;
@@ -37,5 +39,6 @@ public class PL_Shooting : MonoBehaviour {
 		bullet.AddComponent<Bullet> ();
 		bullet.GetComponent<Rigidbody2D>().AddForce(transform.rotation * Vector2.up * 1000);
 		Destroy(bullet, 2.0f);     
+		ammo--;
 	}
 }
