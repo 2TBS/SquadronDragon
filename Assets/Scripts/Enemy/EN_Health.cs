@@ -8,10 +8,13 @@ using UnityEngine;
 ///Since: 21 December 2017
 public class EN_Health : MonoBehaviour {
 	
-	public int hullHealth = 3;
+	public const float MAX_HEALTH = 3f;
+	public float hullHealth = MAX_HEALTH;
+	private SpriteRenderer healthBar;
+
 	// Use this for initialization
 	void Start () {
-		
+		healthBar = GetComponentsInChildren<SpriteRenderer>()[1];
 	}
 	
 	// Update is called once per frame
@@ -20,5 +23,8 @@ public class EN_Health : MonoBehaviour {
 			Debug.Log ("Enemy Ship Destroyed");
 			Destroy (this.gameObject);
 		}
+
+		healthBar.transform.localScale = new Vector3(hullHealth/MAX_HEALTH/2 , 0.5f, 1);
+		healthBar.color = (hullHealth/MAX_HEALTH > .75f) ? Color.green : (hullHealth/MAX_HEALTH > .35f) ? Color.yellow : Color.red;
 	}
 }

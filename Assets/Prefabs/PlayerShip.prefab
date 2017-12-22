@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114926911977261366}
   - component: {fileID: 114644649640661008}
   - component: {fileID: 60607598443359546}
+  - component: {fileID: 114305015562302070}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1169066896690956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -1.96, z: 0}
+  m_LocalPosition: {x: -0.08000898, y: -3.3946648, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,10 +91,10 @@ PolygonCollider2D:
       - {x: 0.715, y: -1.685}
       - {x: 0.715, y: -1.545}
       - {x: 0.575, y: -1.305}
-    - - {x: 0.865, y: 1.755}
-      - {x: 0.715, y: 1.755}
-      - {x: 0.675, y: 1.7249999}
-      - {x: 0.59499997, y: 1.5649999}
+    - - {x: 1.1687481, y: 0.889318}
+      - {x: 0.98837346, y: 1.1475034}
+      - {x: 0.6901875, y: 1.2086284}
+      - {x: 0.564625, y: 1.2308769}
       - {x: 0.515, y: 1.3149999}
       - {x: 0.39499998, y: 0.995}
       - {x: 0.39499998, y: 0.97499996}
@@ -104,8 +105,8 @@ PolygonCollider2D:
       - {x: 0.39499998, y: 0.995}
       - {x: 0.415, y: 1.135}
       - {x: 0.435, y: 1.155}
-      - {x: 0.465, y: 1.4449999}
-      - {x: -0.45499998, y: 1.425}
+      - {x: 0.3435009, y: 1.2020011}
+      - {x: -0.45499998, y: 1.1364388}
       - {x: -0.45499998, y: 1.145}
       - {x: -0.415, y: 1.125}
       - {x: -0.405, y: 0.995}
@@ -116,9 +117,9 @@ PolygonCollider2D:
       - {x: -0.405, y: 0.97499996}
       - {x: -0.405, y: 0.995}
       - {x: -0.45499998, y: 1.0649999}
-      - {x: -0.49499997, y: 1.3249999}
-      - {x: -0.645, y: 1.755}
-      - {x: -0.84499997, y: 1.755}
+      - {x: -0.5405625, y: 1.036439}
+      - {x: -0.61462533, y: 1.1778789}
+      - {x: -0.9513116, y: 1.1475039}
       - {x: -1.265, y: 0.92499995}
       - {x: -1.265, y: 0.315}
       - {x: -0.675, y: -1.4649999}
@@ -152,6 +153,18 @@ PolygonCollider2D:
       - {x: 0.545, y: 0.235}
       - {x: 0.48499998, y: 0.114999995}
       - {x: 0.39499998, y: 0.095}
+--- !u!114 &114305015562302070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169066896690956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae78b3dae067463b94b125bf4bfc934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hullHealth: 10
 --- !u!114 &114644649640661008
 MonoBehaviour:
   m_ObjectHideFlags: 1
