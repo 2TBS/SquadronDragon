@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PL_Shooting : MonoBehaviour {
 
+<<<<<<< HEAD
 	public int ammo = 5;
-	//public const int DELAY = 1;
+	public const int DELAY = 1;
+=======
 	public const float DELAY = 0.3f;
+>>>>>>> 406660f8c0b4ad21c5c7af9fcd57f8380079d438
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
 	int angle;
@@ -21,18 +24,19 @@ public class PL_Shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		fireTimer += Time.deltaTime;
-		if (ammo == 0) {
-			ammo = 5;
-		}
+<<<<<<< HEAD
+		if (ammo == 0) {ammo = 5;}
 		if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
-			if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
-				Fire ();
-				fireTimer = 0.0;
-			} else if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
-				Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString ());
-			}
-		
+=======
+		if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
+>>>>>>> 406660f8c0b4ad21c5c7af9fcd57f8380079d438
+			Fire ();
+			fireTimer = 0.0;
+		} 
+		else if (fireTimer > DELAY && Input.GetButton ("Fire1")) {
+			Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString());
 		}
+		
 	}
 
 	void Fire() {
