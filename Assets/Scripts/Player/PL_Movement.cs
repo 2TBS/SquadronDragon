@@ -21,7 +21,6 @@ public class PL_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(Input.GetAxis ("Horizontal"));
 		if(Input.GetAxis ("Horizontal") < 0 && transform.position.x > -Vars.MAX_WIDTH)
 			transform.Translate(Vector3.left * MOVE_SPEED, Space.World);
 		if(Input.GetAxis ("Horizontal") > 0 && transform.position.x < Vars.MAX_WIDTH)
