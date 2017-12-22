@@ -21,9 +21,10 @@ public class PL_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetAxis ("Horizontal") < 0 && transform.position.x > -Vars.MAX_WIDTH)
+		
+		if(Input.GetKey(KeyCode.A) && transform.position.x > -Vars.MAX_WIDTH)
 			transform.Translate(Vector3.left * MOVE_SPEED, Space.World);
-		if(Input.GetAxis ("Horizontal") > 0 && transform.position.x < Vars.MAX_WIDTH)
+		if(Input.GetKey(KeyCode.D) && transform.position.x < Vars.MAX_WIDTH)
 			transform.Translate(Vector3.right * MOVE_SPEED, Space.World);
 		if(Input.GetKey(KeyCode.Q) && currAngle > -MAX_ROTATION) {
             transform.Rotate(new Vector3(0,0,ROT_SPEED));
