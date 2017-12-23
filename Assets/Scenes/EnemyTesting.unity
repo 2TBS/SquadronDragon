@@ -147,6 +147,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1029728251839250, guid: 93cb1ee120c6bbe4fa48e6c0e7ad09c1, type: 2}
+      propertyPath: m_Name
+      value: Particle System Pink
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93cb1ee120c6bbe4fa48e6c0e7ad09c1, type: 2}
   m_IsPrefabParent: 0
