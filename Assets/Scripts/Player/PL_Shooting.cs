@@ -8,23 +8,33 @@ public class PL_Shooting : MonoBehaviour {
 	public const int DELAY = 1;
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
-	int angle;
+
+    public AudioClip reloadClip;
+    public AudioClip fireClip;
+
+    int angle;
 	Vector3 pos;
 	double fireTimer = 0.0;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 		pos = new Vector3(0f, 2.1f, 0f);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		fireTimer += Time.deltaTime;
-		if (ammo == 0) {ammo = 5;}
+		if(ammo == 0)
+        {
+            Reload();
+        }
 		if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
 			Fire ();
-			GetComponent<AudioSource>().Play();
-			fireTimer = 0.0;
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = fireClip;
+            audio.Play();
+            fireTimer = 0.0;
 		} 
 		else if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
 			Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString());
@@ -32,6 +42,7 @@ public class PL_Shooting : MonoBehaviour {
 
 	}
 
+    //Fire function by instantiating a bullet prefab and adding a force to push it straight up.
 	void Fire() {
 		var bullet = (GameObject)Instantiate(
 			bulletPrefab,
@@ -43,4 +54,14 @@ public class PL_Shooting : MonoBehaviour {
 		Destroy(bullet, 2.0f);     
 		ammo--;
 	}
+
+    //Reload function by playing sound and setting ammo to full
+    void Reload()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = reloadClip;
+        audio.Play();
+        Debug.Log("reload");
+        ammo = 5; //set ammo to full
+    }
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Ammo : MonoBehaviour {
 	public Sprite fullBulletPellet;
 	public Sprite emptyBulletPellet;
-	GameObject ammo;
+	public GameObject ammo;
 	GameObject bulletPellet1;
 	GameObject bulletPellet2;
 	GameObject bulletPellet3;
@@ -23,6 +23,7 @@ public class Ammo : MonoBehaviour {
 		bulletPellet4 = GameObject.Find ("BulletPellet (4)");
 		bulletPellet5 = GameObject.Find ("BulletPellet (5)");
 		shootController = ammo.GetComponent <PL_Shooting> ();
+    
 	}
 	
 	// Update is called once per frame
