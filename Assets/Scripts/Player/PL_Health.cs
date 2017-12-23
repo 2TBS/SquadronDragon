@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 ///Since: 21 December 2017
 public class PL_Health : MonoBehaviour {
 
-	public int hullHealth = 10;
+	public float hullHealth = 10f;
 	// Use this for initialization
 	void Start () {
 		
