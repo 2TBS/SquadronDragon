@@ -4,12 +4,13 @@ using UnityEngine;
 
 ///Defines Enemy Ship Health 
 ///Attach directly to the enemy ship object.
-///Author: Eric Qian
+///Author: Eric Qian & Vikram Peddinti
 ///Since: 21 December 2017
 public class EN_Health : MonoBehaviour {
 	
 	public float maxHealth = 3f;
 	public float hullHealth;
+    public int scoreModifier;
 	private SpriteRenderer healthBar;
 
 	// Use this for initialization
@@ -22,6 +23,7 @@ public class EN_Health : MonoBehaviour {
 	void Update () {
 		if (hullHealth <= 0) {
 			Debug.Log ("Enemy Ship Destroyed");
+            PL_Score.score += scoreModifier;
 			Destroy (this.gameObject);
 		}
 

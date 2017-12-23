@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 8
   hullHealth: 5
+  scoreModifier: 5
 --- !u!114 &114431232917433526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +178,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!212 &212369630024890874
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -219,4 +219,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
