@@ -25,6 +25,7 @@ public class EN_Shooting : MonoBehaviour {
 	}
 
 	void Fire() {
+		GetComponent<AudioSource>().Play();
         var bullet = (GameObject)Instantiate(
             bulletPrefab,
 			transform.position + pos,
