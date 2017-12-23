@@ -25,13 +25,11 @@ public class PL_Movement : MonoBehaviour {
 			MoveLeft ();
 		if (Input.GetAxis ("Horizontal") > 0)
 			MoveRight ();
-		if(Input.GetKey(KeyCode.Q) && currAngle > -MAX_ROTATION) {
-            transform.Rotate(new Vector3(0,0,ROT_SPEED));
-			currAngle -= ROT_SPEED;
+		if(Input.GetKey(KeyCode.Q)) {
+			RotateLeft ();
 		}
-		if(Input.GetKey(KeyCode.E) && currAngle < MAX_ROTATION) {
-            transform.Rotate(new Vector3(0,0,-ROT_SPEED));
-			currAngle += ROT_SPEED;
+		if(Input.GetKey(KeyCode.E)) {
+			RotateRight ();
 		}
 	}
 
@@ -43,5 +41,17 @@ public class PL_Movement : MonoBehaviour {
 	public void MoveRight() {
 		if(transform.position.x < Vars.MAX_WIDTH)
 			transform.Translate(Vector3.right * MOVE_SPEED, Space.World);
+	}
+	public void RotateLeft() {
+		if (currAngle > -MAX_ROTATION) {
+			transform.Rotate (new Vector3 (0, 0, ROT_SPEED));
+			currAngle -= ROT_SPEED;
+		}
+	}
+	public void RotateRight() {
+		if (currAngle < MAX_ROTATION) {
+			transform.Rotate(new Vector3(0,0,-ROT_SPEED));
+			currAngle += ROT_SPEED;
+		}
 	}
 }

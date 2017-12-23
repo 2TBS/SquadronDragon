@@ -25,25 +25,30 @@ public class PL_Shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		fireTimer += Time.deltaTime;
-		if(ammo == 0)
-        {
-            Reload();
-        }
-		if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
+		if (Input.GetButtonDown ("Fire1")) {
 			Fire ();
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.clip = fireClip;
-            audio.Play();
-            fireTimer = 0.0;
-		} 
-		else if (fireTimer > DELAY && Input.GetButtonDown ("Fire1")) {
-			Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString());
 		}
 
 	}
 
+	public void Fire() {
+		if(ammo == 0)
+		{
+			Reload();
+		}
+		if (fireTimer > DELAY) {
+			FireBullet ();
+			AudioSource audio = GetComponent<AudioSource>();
+			audio.clip = fireClip;
+			audio.Play();
+			fireTimer = 0.0;
+		} 
+		else if (fireTimer > DELAY) {
+			Debug.Log ("Weapon Cooldown (Time Remaining): " + (DELAY - fireTimer).ToString());
+		}
+	}
     //Fire function by instantiating a bullet prefab and adding a force to push it straight up.
-	void Fire() {
+	void FireBullet() {
 		var bullet = (GameObject)Instantiate(
 			bulletPrefab,
 			transform.position + pos,

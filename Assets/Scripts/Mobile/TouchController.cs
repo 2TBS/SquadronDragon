@@ -5,9 +5,13 @@ using UnityEngine;
 public class TouchController : MonoBehaviour {
 	
 	GameObject playerShip;
+	PL_Movement movementHandler;
+	PL_Shooting firingHandler;
 	// Use this for initialization
 	void Start () {
 		playerShip = GameObject.Find ("PlayerShip");
+		movementHandler = playerShip.GetComponent<PL_Movement> ();
+		firingHandler = playerShip.GetComponent<PL_Shooting> ();
 	}
 	
 	// Update is called once per frame
@@ -36,11 +40,26 @@ public class TouchController : MonoBehaviour {
 	}
 
 	void HandleTouch(Touch touch) {
-		if (touch.position.x < Screen.width/2) {
-			playerShip.GetComponent<PL_Movement> ().MoveLeft();
+		if (touch.position.x < Screen.width / 2 && touch.position.y > Screen.height - Screen.height / 4) {
+			//Top left
+			movementHandler.RotateLeft();
 		}
-		else if (touch.position.x > Screen.width/2) {
-			playerShip.GetComponent<PL_Movement> ().MoveRight();
+		else if (touch.position.x > Screen.width / 2 && touch.position.y > Screen.height - Screen.height / 4) {
+			//Top right
+			movementHandler.RotateRight();
+		}
+		else if (touch.position.x < Screen.width / 2 && touch.position.y > Screen.height - Screen.height / 1.25) 
+		{
+			movementHandler.MoveLeft ();
 		} 
+		else if (touch.position.x > Screen.width / 2 && touch.position.y > Screen.height - Screen.height / 1.25) 
+		{
+			movementHandler.MoveRight ();
+		} 
+		else if (touch.position.y < Screen.height - Screen.height / 1.25) 
+		{
+			firingHandler.Fire ();
+		}
+
 	}
 }
