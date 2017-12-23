@@ -12,7 +12,10 @@ public class MM_Menu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKey (KeyCode.Escape)) {
+			//Exit if Esc key pressed
+			Application.Quit();
+		}
 	}
 
 	public void LoadScene() {
@@ -31,7 +34,7 @@ public class MM_Menu : MonoBehaviour {
     public void GameOver()
     {
         level = 0;
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene("GameOver");
     }
 	public void ExitGame() 
 	{
