@@ -20,21 +20,18 @@ public class MM_Menu : MonoBehaviour {
 
 	public void LoadScene() {
 		SceneManager.LoadScene(level);
+        level++;
 	}
     public void BackScene()
     {
-        SceneManager.LoadScene(level-1);
+        level--;
+        SceneManager.LoadScene(level);
         level--;
     }
-	public void ForwardScene()
-	{
-		SceneManager.LoadScene(level+1);
-		level++;
-	}
     public void GameOver()
     {
         level = 0;
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene(0);
     }
 	public void ExitGame() 
 	{
