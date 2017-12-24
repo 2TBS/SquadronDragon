@@ -50,15 +50,15 @@ public class TouchController : MonoBehaviour {
 		}
 		else if (touch.position.x < Screen.width / 2 && touch.position.y > Screen.height - Screen.height / 1.25) 
 		{
-			movementHandler.MoveLeft ();
+			movementHandler.MoveLeft();
 		} 
 		else if (touch.position.x > Screen.width / 2 && touch.position.y > Screen.height - Screen.height / 1.25) 
 		{
-			movementHandler.MoveRight ();
+			movementHandler.MoveRight();
 		} 
 		else if (touch.position.y < Screen.height - Screen.height / 1.25) 
 		{
-			firingHandler.Fire ();
+			firingHandler.Fire();
 		}
 
 	}
