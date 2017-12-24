@@ -14,10 +14,12 @@ public class PL_Score:MonoBehaviour{
 	// Use this for initialization
     void Start () {
         score = 0;
+		Vars.CURRENT_SCORE = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         scoreText.text = score.ToString();
+		Vars.CURRENT_SCORE = score;
 	}
 }

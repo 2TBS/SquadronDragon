@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MM_Menu : MonoBehaviour {
     int level = 1;
+	Text scoreLabel;
 	// Use this for initialization
 	void Start () {
-		
+		if (SceneManager.GetActiveScene ().name == "GameOver") {
+			scoreLabel = GetComponent<UnityEngine.UI.Text> ();
+			scoreLabel.text = "Your Score Is: " + PL_Score.score.ToString();
+			UnityEditor.EditorUtility.SetDirty(scoreLabel);
+			Canvas.ForceUpdateCanvases();
+			scoreLabel.SetAllDirty ();
+			scoreLabel.UpdateText ();
+			Debug.Log (PL_Score.score.ToString ());
+			Debug.Log (scoreLabel);
+		}
 	}
 	
 	// Update is called once per frame

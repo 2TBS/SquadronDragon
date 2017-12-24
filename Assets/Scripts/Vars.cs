@@ -8,4 +8,6 @@ public class Vars : MonoBehaviour {
 	public static int MAX_WIDTH = 10;
 	///Height of playing field
 	public static int MAX_HEIGHT = 5;
+
+	public static int CURRENT_SCORE = 0;
 }
