@@ -11,13 +11,7 @@ public class MM_Menu : MonoBehaviour {
 	void Start () {
 		if (SceneManager.GetActiveScene ().name == "GameOver") {
 			scoreLabel = GetComponent<UnityEngine.UI.Text> ();
-			scoreLabel.text = "Your Score Is: " + PL_Score.score.ToString();
-			UnityEditor.EditorUtility.SetDirty(scoreLabel);
-			Canvas.ForceUpdateCanvases();
-			scoreLabel.SetAllDirty ();
-			scoreLabel.UpdateText ();
-			Debug.Log (PL_Score.score.ToString ());
-			Debug.Log (scoreLabel);
+			scoreLabel.text = "Your Score Is: " + Vars.CURRENT_SCORE;
 		}
 	}
 	

@@ -23,7 +23,7 @@ public class EN_Health : MonoBehaviour {
 	void Update () {
 		if (hullHealth <= 0) {
 			Debug.Log ("Enemy Ship Destroyed");
-            PL_Score.score += scoreModifier;
+			Vars.CURRENT_SCORE += scoreModifier;
 			Destroy (this.gameObject);
 		}
 
